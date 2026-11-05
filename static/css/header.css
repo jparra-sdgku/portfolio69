@@ -1,0 +1,56 @@
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    height: 64px;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+}
+
+header nav {
+    height: 100%;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 1.5rem;
+}
+
+.nav-link {
+    height: 100%;
+    gap: 2rem;
+}
+
+.nav-link a {
+    color: var(--muted-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link a:hover,
+.nav-link a.active {
+    color: var(--primary-color);
+}
+
+.nav-link a.active {
+    border-bottom-color: var(--primary-color);
+}
+
+/*Hamburger button*/
+.nav-btn label {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-color);
+    margin: 5px auto;
+}
+
+#nav-check, .nav-btn {
+    display: none;
+}

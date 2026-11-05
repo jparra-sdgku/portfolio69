@@ -1,0 +1,8 @@
+from django.shortcuts import render
+from .models import Project
+
+# Create your views here.
+def projects_list(request):
+    projects_list = Project.objects.all().order_by('-year')
+    context = {"projects": projects_list}
+    return render(request, 'projects/projects_list.html', context)

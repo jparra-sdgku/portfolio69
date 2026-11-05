@@ -1,0 +1,32 @@
+footer {
+    max-width: 1100px;
+    margin: 4rem auto 0;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* The only place where the decorative font is used */
+footer h2 {
+    font-family: var(--lobster-font);
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+footer nav {
+    width: max-content;
+    gap: 1.5rem;
+}
+
+footer nav a {
+    color: var(--muted-color);
+    font-size: 0.85rem;
+}
+
+footer nav a:hover {
+    color: var(--primary-color);
+}

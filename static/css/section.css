@@ -1,0 +1,278 @@
+/* Shared spacing for every section */
+.about-section,
+.projects-section,
+.experience-section,
+.contact-form {
+    padding: 5rem 0;
+}
+
+/* Section titles */
+.projects-section > h2,
+.experience-section > h2 {
+    font-size: 2rem;
+}
+
+/*About Section*/
+.about-section {
+    gap: 3rem;
+}
+
+.about-image-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-image-container img {
+    width: 70%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-description-container {
+    width: 60%;
+    align-items: flex-start;
+}
+
+.about-description-container > div {
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.about-description-container h1 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.about-description-container h2 {
+    font-size: 2.5rem;
+}
+
+.about-description-container p {
+    max-width: 65ch;
+    margin: 1.5rem 0px;
+}
+
+/*Skills Section*/
+.skills-section {
+    padding: 2rem;
+    margin: 5rem 0px;
+}
+
+.skills-list {
+    width: 50%;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+
+/*Projects Section*/
+.projects-section {
+    width: 100%;
+}
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    align-items: stretch;
+}
+
+/* Cards shared by projects and experience */
+.project-card,
+.experience-card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    transition: border-color var(--transition);
+}
+
+.project-card:hover,
+.experience-card:hover {
+    border-color: var(--primary-color);
+}
+
+.project-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.project-card a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.5rem;
+}
+
+.project-card img {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    padding: 0 1.25rem;
+}
+
+/* Title */
+.project-card p:nth-child(2), .experience-card p:nth-child(1) {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Subtitle / description */
+.project-card p:nth-child(3), .experience-card p:nth-child(2) {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Date / year */
+.project-card p:nth-child(4), .experience-card p:nth-child(4) {
+    font-size: 0.85rem;
+    letter-spacing: 0.05rem;
+}
+
+.skills-container {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding: 0.5rem 1.25rem 1.25rem;
+}
+
+
+/*Experience Section*/
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 0.4rem;
+}
+
+.experience-card .skills-container {
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.experience-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    margin-top: 2.5rem;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+
+/* Contact section */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-form h1 {
+    margin-bottom: 2rem;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 560px;
+    gap: 1.25rem;
+}
+
+/* Each field rendered by form.as_p (<p><label><input></p>) */
+#contact-form p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+#contact-form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Validation errors rendered by Django */
+#contact-form .errorlist {
+    list-style: none;
+    color: #DC2626;
+    font-size: 0.85rem;
+}
+
+/* Container for the buttons */
+#contact-form .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+#contact-form button {
+    padding: 0.65rem 1.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition), color var(--transition), opacity var(--transition);
+}
+
+#contact-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#contact-form button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* Reset as a ghost button */
+#contact-form button[type="reset"] {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+#contact-form button[type="reset"]:hover {
+    background-color: var(--primary-soft);
+}

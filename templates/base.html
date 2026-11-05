@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/section.css' %}" />
+  </head>
+  <body>
+    <!-- Header  Navigation with placeholder links-->
+    <header class="center">
+      <nav>
+        <!--Hamburger button-->
+        <!--Links or Options of the Menu-->
+        <div class="nav-link center">
+          <a href="{% url 'about_me' %}">About me</a>
+          <a href="{% url 'projects_list' %}">Projects</a>
+          <a href="{% url 'experience' %}">Experience</a>
+          <a href="{% url 'contact' %}">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main>{% block content %} {% endblock content %}</main>
+    <!-- Footer with placeholder content -->
+    <footer>
+      <p>&copy; {% now "Y" %} Parra Pages. Powered by Django.</p>
+      <nav class="nav-footer center">
+        <a href="{% url 'about_me' %}">About Me</a>
+        <a href="{% url 'projects_list' %}">Projects</a>
+        <a href="{% url 'experience' %}">Experience</a>
+        <a href="{% url 'contact' %}">Contact</a>
+      </nav>
+    </footer>
+  </body>
+</html>

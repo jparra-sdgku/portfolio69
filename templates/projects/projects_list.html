@@ -3,10 +3,28 @@
 {% block title %}Projects{% endblock%} 
 
 {% block content %}
-    <h1>Projects</h1>
-    {% for project in projects %} 
-        <p>{{ project.name}}</p>
-       <img src="{{ project.image.url }}" alt="{{ project.name }}">
+<section id="projects" class="projects-section center-column">
+  <h2>Projects</h2>
 
-    {% endfor %} 
+  <div class="projects-list">
+    <!--All the cards-->
+    {% for project in projects %}
+    <div class="project-card">
+      <a href="{{ project.repository }}" target="_blank" >
+        <img src="{{ project.image.url }}" alt="project image" />
+        <p>{{ project.name }}</p>
+        <p>{{ project.description }}</p>
+        <p>{{ project.year }}</p>
+        <div class="skills-container center">
+        {% for skill in project.skills.all %}
+            <label class="text-label">
+                {{ skill.name }}
+            </label>
+        {% endfor %} 
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
 {% endblock content %}
